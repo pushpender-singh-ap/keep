@@ -2,41 +2,65 @@
 
 This program moves the mouse or press a key when it detects that you are away.  
 It won't do anything if you are using your computer.  
-Useful to trick your machine to think you are still working with it. 
+Useful to trick your machine to think you are still working with it.
+It can be used to avoid going idle on messaging apps like Slack, Microsoft Teams, etc.
 
 ## Demo
 
-[![Demo](demo/demo.gif)](https://github.com/carrot69/keep-presence)
+[![Demo](demo/demo.gif)](https://github.com/pushpender-singh-ap/keep)
 
-## Install with Snap
-
-```
-sudo snap install keep-presence
-```
-
-<a href="https://snapcraft.io/keep-presence" target="_blank">
-  <img alt="Get it from the Snap Store"
-       src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg"
-       align="center"
-       height="50">
-</a>
-
-##### Run
+## Installation
 
 ```
-keep-presence
+git clone git@github.com:pushpender-singh-ap/keep.git
 ```
-
-If you don't have the `snap` command available, you might be able to find instructions for your distro [here](https://docs.snapcraft.io/core/install).
-
-## Manual installation
-
 ```
-git clone https://github.com/carrot69/keep-presence.git
-cd keep-presence
+cd keep
+```
+```
 pip3 install pynput
-python3 src/keep-presence.py
 ```
+```
+python3 keep.py
+```
+
+### Python Environment Setup (Recommended)
+
+1. **Create a virtual environment:**
+
+```sh
+python3 -m venv .venv
+```
+
+2. **Activate the virtual environment:**
+
+```sh
+source .venv/bin/activate
+```
+
+3. **Install dependencies:**
+
+```sh
+pip install -r requirements.txt
+```
+
+4. **Run the program:**
+
+```sh
+python keep.py
+```
+
+5. **Start the program with default settings:**
+
+```sh
+source .venv/bin/activate && python keep.py
+```
+
+---
+
+## About this repository
+
+This repository is the primary copy of the project with some custom changes and improvements. It is originally a fork of the project at <https://github.com/carrot69/keep-presence> — please refer to that original repository for upstream history and the original implementation. Use this repository (`pushpender-singh-ap/keep`) as the primary source for the current custom version.
 
 ## Optional arguments
 
@@ -60,5 +84,3 @@ python3 src/keep-presence.py
                                   Usage: two numbers (ex. -r 3 10). Execute actions based on a 
                                   random interval between start and stop seconds. 
                                   Note: Overwrites the seconds argument.
-
-```
